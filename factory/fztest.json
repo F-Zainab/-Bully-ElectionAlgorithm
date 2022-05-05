@@ -1,0 +1,9 @@
+{
+	"name": "fztest",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "71e68872-2b7c-4994-8571-99a0dc6558ec",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+	}
+}

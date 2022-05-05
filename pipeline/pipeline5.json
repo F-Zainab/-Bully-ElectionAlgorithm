@@ -1,0 +1,58 @@
+{
+	"name": "pipeline5",
+	"properties": {
+		"activities": [
+			{
+				"name": "GetFile",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://fzteststorage.blob.core.windows.net/fztestcontainer/sample4.csv",
+					"method": "GET",
+					"headers": {
+						"x-ms-version": "2017-11-09"
+					}
+				}
+			},
+			{
+				"name": "Web2",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "GetFile",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://fzteststorage.blob.core.windows.net/fztestcontainer/inputDemo/",
+					"method": "POST",
+					"body": {
+						"value": "@activity('GetFile').output.response",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-04-05T16:45:55Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

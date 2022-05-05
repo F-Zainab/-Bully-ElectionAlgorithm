@@ -1,0 +1,138 @@
+{
+	"name": "Json2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Sample Json File with 500 Records (1).json",
+				"container": "fztestcontainer"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"feeds": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"id": {
+								"type": "integer"
+							},
+							"title": {
+								"type": "string"
+							},
+							"description": {
+								"type": "string"
+							},
+							"location": {
+								"type": "string"
+							},
+							"lng": {
+								"type": "integer"
+							},
+							"lat": {
+								"type": "integer"
+							},
+							"userId": {
+								"type": "integer"
+							},
+							"name": {
+								"type": "string"
+							},
+							"isdeleted": {
+								"type": "boolean"
+							},
+							"profilePicture": {
+								"type": "string"
+							},
+							"videoUrl": {
+								"type": "null"
+							},
+							"images": {
+								"type": "null"
+							},
+							"mediatype": {
+								"type": "integer"
+							},
+							"imagePaths": {
+								"type": "null"
+							},
+							"feedsComment": {
+								"type": "null"
+							},
+							"commentCount": {
+								"type": "integer"
+							},
+							"multiMedia": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "integer"
+										},
+										"name": {
+											"type": "string"
+										},
+										"description": {
+											"type": "null"
+										},
+										"url": {
+											"type": "string"
+										},
+										"mediatype": {
+											"type": "integer"
+										},
+										"likeCount": {
+											"type": "integer"
+										},
+										"place": {
+											"type": "null"
+										},
+										"createAt": {
+											"type": "string"
+										}
+									}
+								}
+							},
+							"likeDislike": {
+								"type": "object",
+								"properties": {
+									"likes": {
+										"type": "integer"
+									},
+									"dislikes": {
+										"type": "integer"
+									},
+									"userAction": {
+										"type": "integer"
+									}
+								}
+							},
+							"createdAt": {
+								"type": "string"
+							},
+							"code": {
+								"type": "integer"
+							},
+							"msg": {
+								"type": "null"
+							}
+						}
+					}
+				},
+				"totalFeed": {
+					"type": "integer"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
