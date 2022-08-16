@@ -1,0 +1,27 @@
+{
+	"name": "RestResource2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "RestService1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"timeout": {
+				"type": "int",
+				"defaultValue": 0
+			},
+			"simplevar": {
+				"type": "string",
+				"defaultValue": "abc"
+			},
+			"queryURL": {
+				"type": "string",
+				"defaultValue": "abc"
+			}
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

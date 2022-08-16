@@ -4,14 +4,18 @@
 		"type": "Managed",
 		"typeProperties": {
 			"computeProperties": {
-				"location": "AutoResolve",
+				"location": "East US",
 				"dataFlowProperties": {
-					"computeType": "MemoryOptimized",
-					"coreCount": 272,
-					"timeToLive": 10,
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 0,
 					"cleanup": false
 				}
 			}
+		},
+		"managedVirtualNetwork": {
+			"type": "ManagedVirtualNetworkReference",
+			"referenceName": "default"
 		}
 	}
 }

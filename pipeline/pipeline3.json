@@ -1,0 +1,92 @@
+{
+	"name": "pipeline3",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web1",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://www.office.com/mycontent?auth=2",
+					"method": "POST",
+					"headers": {
+						"content-type": "application/json"
+					},
+					"body": {
+						"name": "DelimitedText1",
+						"properties": {
+							"linkedServiceName": {
+								"referenceName": "HttpServer1",
+								"type": "LinkedServiceReference",
+								"parameters": {
+									"offset": 0,
+									"limit": 10000
+								}
+							},
+							"parameters": {
+								"offset": {
+									"type": "string",
+									"defaultValue": "0"
+								},
+								"limit": {
+									"type": "int",
+									"defaultValue": 100000
+								},
+								"Simplevar": {
+									"type": "string",
+									"defaultValue": "abc"
+								}
+							},
+							"annotations": [],
+							"type": "DelimitedText",
+							"typeProperties": {
+								"location": {
+									"type": "HttpServerLocation",
+									"relativeUrl": {
+										"value": "string(dataset())",
+										"type": "Expression"
+									}
+								},
+								"columnDelimiter": ",",
+								"compressionCodec": "deflate",
+								"escapeChar": "\\",
+								"firstRowAsHeader": true,
+								"quoteChar": "\""
+							},
+							"schema": []
+						},
+						"type": "Microsoft.DataFactory/factories/datasets"
+					},
+					"linkedServices": [
+						{
+							"referenceName": "HttpServer1",
+							"type": "LinkedServiceReference"
+						}
+					],
+					"datasets": [
+						{
+							"referenceName": "DelimitedText1",
+							"type": "DatasetReference",
+							"parameters": {
+								"offset": "0",
+								"limit": 100000,
+								"Simplevar": "abc"
+							}
+						}
+					]
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-04-03T20:41:18Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

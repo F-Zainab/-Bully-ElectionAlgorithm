@@ -1,5 +1,5 @@
 {
-	"name": "Json1",
+	"name": "Json3",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",

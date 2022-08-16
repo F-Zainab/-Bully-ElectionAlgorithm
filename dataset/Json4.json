@@ -1,5 +1,5 @@
 {
-	"name": "Json1",
+	"name": "Json4",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "Sample Json File with 500 Records (1).json",
 				"container": "fztestcontainer"
 			}
 		},

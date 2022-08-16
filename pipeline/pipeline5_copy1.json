@@ -1,0 +1,41 @@
+{
+	"name": "pipeline5_copy1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Web2",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://login.microsoftonline.com/72f988bf-86f1-41af-91ab-2d7cd011db47/oauth2/token",
+					"method": "POST",
+					"headers": {
+						"content-type": "application/x-www-form-urlencoded"
+					},
+					"body": {
+						"value": "grant_type=client_credentials&client_id=794d33c3-2258-4726-829f-2e2bc06aea48&client_secret=nP27Q~yXVjs-3XvY836fNR8TllNQicNPlHwIE&resource=https://management.azure.com/",
+						"type": "Expression"
+					},
+					"authentication": {
+						"resource": "https://management.azure.com/",
+						"credential": {
+							"referenceName": "credential1",
+							"type": "CredentialReference"
+						}
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-04-06T00:20:33Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

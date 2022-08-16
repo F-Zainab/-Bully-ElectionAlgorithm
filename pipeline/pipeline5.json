@@ -19,6 +19,10 @@
 					"method": "GET",
 					"headers": {
 						"x-ms-version": "2017-11-09"
+					},
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://storage.azure.com/"
 					}
 				}
 			},
@@ -45,14 +49,14 @@
 					"url": "https://fzteststorage.blob.core.windows.net/fztestcontainer/inputDemo/",
 					"method": "POST",
 					"body": {
-						"value": "@activity('GetFile').output.response",
+						"value": "@activity('GetFile').output.Response",
 						"type": "Expression"
 					}
 				}
 			}
 		],
 		"annotations": [],
-		"lastPublishTime": "2022-04-05T16:45:55Z"
+		"lastPublishTime": "2022-04-05T17:31:54Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

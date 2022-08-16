@@ -1,20 +1,27 @@
 {
-	"name": "Json2",
+	"name": "DelimitedText4",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Json",
+		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "dummyfile.json",
+				"fileName": {
+					"value": "@concat('R5OBJECTS_', convertFromUtc(Utcnow(), 'Pacific Standard Time'),'.csv')",
+					"type": "Expression"
+				},
 				"container": "fztestcontainer"
-			}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
 		},
-		"schema": {}
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

@@ -1,20 +1,19 @@
 {
-	"name": "Json2",
+	"name": "Binary2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Json",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "dummyfile.json",
+				"fileName": "sample4.csv",
 				"container": "fztestcontainer"
 			}
-		},
-		"schema": {}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

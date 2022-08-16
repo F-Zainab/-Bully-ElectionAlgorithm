@@ -1,0 +1,23 @@
+{
+	"name": "HttpServer1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"offset": {
+				"type": "int",
+				"defaultValue": 0
+			},
+			"limit": {
+				"type": "int",
+				"defaultValue": 10000
+			}
+		},
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://app.powerbi.com/datahub/datasets/6ef23dfc-cd4a-4d07-9b0a-51a0bc933834",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+	"name": "newtestfz",
+	"properties": {
+		"globalParameters": {
+			"URL": {
+				"type": "string",
+				"value": "https://login.microsoftonline.com/6ef23dfc-cd4a-4d07-9b0a-51a0bc933834"
+			},
+			"Days": {
+				"type": "int",
+				"value": -1
+			},
+			"Body": {
+				"type": "string",
+				"value": "grant_type=client_credentials&client_id=6c56d62d-27eb-4a54-bfac-00e0aa2e06dc&client_secret=vBT7Q~xlSwGkzovaSij9XaSZTjadRgNqRp18V&resource=https://analysis.windows.net/powerbi/api"
+			}
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "8df341de-bf80-4f93-92d2-05ac9c2bcab0",
+		"tenantId": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+		"userAssignedIdentities": {
+			"/subscriptions/4f9fafa1-a680-4d16-8dbd-55964d679d98/resourcegroups/FZTestRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/testidentity": {
+				"clientId": "23d0aa28-d1d6-4506-a1c6-a806cd08e806",
+				"principalId": "dca9823e-df61-48a0-a4cf-b05cd3e06140"
+			}
+		}
+	}
+}

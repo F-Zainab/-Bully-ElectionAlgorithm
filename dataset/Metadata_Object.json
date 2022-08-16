@@ -1,20 +1,23 @@
 {
-	"name": "Json2",
+	"name": "Metadata_Object",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Json",
+		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "dummyfile.json",
 				"container": "fztestcontainer"
-			}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
 		},
-		"schema": {}
+		"schema": []
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }
