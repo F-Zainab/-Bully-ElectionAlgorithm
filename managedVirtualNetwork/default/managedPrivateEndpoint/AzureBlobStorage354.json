@@ -1,0 +1,7 @@
+{
+	"name": "AzureBlobStorage354",
+	"properties": {
+		"privateLinkResourceId": "/subscriptions/4f9fafa1-a680-4d16-8dbd-55964d679d98/resourceGroups/FZTestRG/providers/Microsoft.Storage/storageAccounts/fzteststorage",
+		"groupId": "blob"
+	}
+}
